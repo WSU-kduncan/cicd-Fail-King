@@ -51,9 +51,11 @@
              sudo docker build -t web:latest .
 
         3. To run the container I used:
-            docker run -dit 8080:80 web
+            docker run -dit -p 8080:80 web
 
-        4. To view the project you must type curl 10.0.0.5:8080 which is the private ip and the port I bound the container to. to use an external connection I would need to use the elastic ip and 8080 as the port, however, this is not workign for me.
+        4. To view the project you must type:
+            curl 10.0.0.5:8080
+        which is the private ip and the port I bound the container to. to use an external connection I would need to use the elastic ip and 8080 as the port, however, this is not working for me.
 
 ### GitHub Actions and DockerHub
     
@@ -61,4 +63,16 @@
 
     2. I just logged into docker in the terminal... I could not find a setting to change to enable it, so I just went for it and it worked?
 
-    3.  
+    3.  skipped
+
+    4. skipped
+
+### Deployment
+
+    1. I pulled using:
+        sudo docker pull ckemplin/project6:latest
+
+        sudo is required only because I am too lazy to put my user in the docker group
+
+    2. I ran the container by running:
+        sudo docker run -dit -p 8080:80 web
